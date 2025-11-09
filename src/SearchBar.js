@@ -1,6 +1,4 @@
-import './App.css';
 import React, { useState } from 'react';
-
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -11,12 +9,12 @@ function App() {
       	text:"hello i am trying to text essa essay"
         },
   		{
-        title:"essay essay 2",
+        title:"essay part  essay 2",
        	text:"hello checking text essay essay results essay"
       },
       {
         title:"essay  3",
-       	text:"hello checking text  results"
+       	text:"hello part checking text  results"
       },
       {
         title:"part 4",
@@ -28,6 +26,10 @@ function App() {
       },
   	]);
 
+    const onSearchClear = () => {
+      setInputValue('');
+      setCount(0);
+    }
     
     const onChnageImput = (text) => {
       setInputValue(text);
@@ -47,7 +49,7 @@ function App() {
 
     const highlightText = (text, highlight) => {
       if (!highlight.trim()) {
-        return text; // No highlight value, return original text
+        return text;
       }
       const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
       return parts.map((part, index) => (
@@ -63,11 +65,9 @@ function App() {
       <div>
         <h1>
           {highlightText(essay.title, inputValue)}
-
         </h1>
         <p>
           {highlightText(essay.text, inputValue)}
-
         </p>
       </div>
     ));
@@ -87,7 +87,7 @@ function App() {
           }}
           placeholder="Search..."
         />
-        <button onClick={() => setInputValue('') } class="clear-button">x</button>
+        <button onClick={onSearchClear} class="clear-button">x</button>
 	    </div>
       <div id="result-test">
         <text><span class="highlighted-count">{count} posts</span>where found</text>

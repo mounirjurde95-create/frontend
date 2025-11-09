@@ -1,50 +1,41 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+	background-color: lightgray;
+	justify-items: left;
+	padding: 10px;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.search-container {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	width: 300px;
 }
-    	.search-container {
-    		position: relative;
-    		display: inline-flex;
-        	align-items: center;
-        	width: 300px;
-    	}
-    	#searchText {
-    		width: 100%;
-        	padding: 10px;
-        	border: 1px solid  black;
-        	border-radius: 4px;
-    	}
-    	.clear-button {
-    		position: absolute;
-    		background-color: gray;
-    		display: flex;
-    		justify-content: center;
-    		text-align: center;
-    		height: 15px;
-    		width: 15px;
-    		border-radius: 50%;
-   		 	right: 5px;
-    		line-height: 1;
-    		color: white;
-    		cursor:pointer;
-            border: none;
-    	}
-
-		.highlighted-count {
-			font-weight: bold; /* Makes the text bold */
-			padding: 10px 5px; /* Adds padding around the text (top/bottom, left/right) */
-			display: inline-block; /* Important for vertical padding on inline elements */
-		}
-		.highlight {
-			background-color: yellow;
-			font-weight: bold;
-		}
+#searchText {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid  black;
+	border-radius: 4px;
+}
+.clear-button {
+	position: absolute;
+	background-color: gray;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	right: 5px;
+	line-height: 1;
+	color: white;
+	cursor:pointer;
+	border: none;
+}
+.highlighted-count {
+	font-weight: bold; /* Makes the text bold */
+	padding: 10px 5px; /* Adds padding around the text (top/bottom, left/right) */
+	display: inline-block; /* Important for vertical padding on inline elements */
+}
+.highlight {
+	background-color: yellow;
+	font-weight: bold;
+}

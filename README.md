@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Getting Started with SearchBar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Search Bar was set as an answer to a Search Bar exam that aims to highlight the text entered in the input field and check its result in an array of essays below.
 
-## Available Scripts
+## Search Bar
 
-In the project directory, you can run:
+The Search Bar is a Search Input that allows any input to be entered by a user, this user aim from this input field to search for a specific letters, keywords, words and even sentence in an array of essay.
 
-### `npm start`
+This input have an x button at the end of the field allows the user to clear his input and try again for another selection.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This clear not only clear the input fields, but also clears its effect on the essay highlighting moreover it even set back the number of posts back to 0.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ const onSearchClear = () => {
+      setInputValue('');
+      setCount(0);
+    }
 
-### `npm test`
+## Search Count
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Search Count is count with sentence below the search bar that check the enter value from the user how many times it is posted.
 
-### `npm run build`
+Each essay have a title and a text, so if the search resul is found in the title only or in the text only or in both it will be added by 1, since each post is considered from 1 title and 1 text.
+it this post have the same value entered by user in title or in text or in both then the number of posts will increase.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If essay 1 have the searched value in its title then add counter will increase by one, if essay 1 have the searched value in its text then the counter will be increased by one, if essay 3 have the searched value in both the title and text then the counter will be increased also by one, so in this caase the value of the counter will be three.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Array Of Esaays
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+These array of essays are a dummy data added and created to check the function of the search bar and its effect on these essays and counter.
 
-### `npm run eject`
+    [
+ 	    {
+        title:"essayessay essay essay 1",
+      	text:"hello i am trying to text essa essay"
+        },
+  		{
+        title:"essay part  essay 2",
+       	text:"hello checking text essay essay results essay"
+      },
+      {
+        title:"essay  3",
+       	text:"hello part checking text  results"
+      },
+      {
+        title:"part 4",
+       	text:"hello checking text essay essay results essay"
+      },
+      {
+        title:"part 5",
+       	text:"hello checking text results"
+      },
+  	];
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Each essay is considered as a post, and each essay/post consist of both tite and text, user when search for a specific value in a post this value could be in the title or in the text or in both, thats why counter only add 1 if value is found in both title and text or in one of them because they both are a part of one post.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
