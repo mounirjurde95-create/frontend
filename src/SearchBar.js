@@ -24,53 +24,53 @@ function App() {
         title:"part 5",
        	text:"hello checking text results"
       },
-  	]);
+  ]);
 
-    const onSearchClear = () => {
-      setInputValue('');
-      setCount(0);
-    }
-    
-    const onChnageImput = (text) => {
-      setInputValue(text);
-      let currentCount = 0;
-      const lowerCaseInputValue = text.toLowerCase();
-      essays.forEach((essay) => {
-        const lowerCaseEssayTitle = essay.title.toLowerCase();
-        const lowerCaseEssayText = essay.text.toLowerCase();
-        if ( 
-          (lowerCaseEssayTitle.includes(lowerCaseInputValue) || lowerCaseEssayText.includes(lowerCaseInputValue)) 
-          && lowerCaseInputValue !== '') {
-          currentCount++;
-        }
-      });
-      setCount(currentCount);
-    }
-
-    const highlightText = (text, highlight) => {
-      if (!highlight.trim()) {
-        return text;
+  const onSearchClear = () => {
+    setInputValue('');
+    setCount(0);
+  }
+  
+  const onChnageImput = (text) => {
+    setInputValue(text);
+    let currentCount = 0;
+    const lowerCaseInputValue = text.toLowerCase();
+    essays.forEach((essay) => {
+      const lowerCaseEssayTitle = essay.title.toLowerCase();
+      const lowerCaseEssayText = essay.text.toLowerCase();
+      if ( 
+        (lowerCaseEssayTitle.includes(lowerCaseInputValue) || lowerCaseEssayText.includes(lowerCaseInputValue)) 
+        && lowerCaseInputValue !== '') {
+        currentCount++;
       }
-      const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
-      return parts.map((part, index) => (
-        part.toLowerCase() === highlight.toLowerCase() ? (
-          <span key={index} className="highlight">{part}</span>
-        ) : (
-          <span key={index}>{part}</span>
-        )
-      ));
-    };
+    });
+    setCount(currentCount);
+  }
 
-    const divElements = essays.map((essay) => (
-      <div>
-        <h1>
-          {highlightText(essay.title, inputValue)}
-        </h1>
-        <p>
-          {highlightText(essay.text, inputValue)}
-        </p>
-      </div>
+  const highlightText = (text, highlight) => {
+    if (!highlight.trim()) {
+      return text;
+    }
+    const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
+    return parts.map((part, index) => (
+      part.toLowerCase() === highlight.toLowerCase() ? (
+        <span key={index} className="highlight">{part}</span>
+      ) : (
+        <span key={index}>{part}</span>
+      )
     ));
+  };
+
+  const divElements = essays.map((essay) => (
+    <div>
+      <h1>
+        {highlightText(essay.title, inputValue)}
+      </h1>
+      <p>
+        {highlightText(essay.text, inputValue)}
+      </p>
+    </div>
+  ));
 
   return (
     <div className="App">
